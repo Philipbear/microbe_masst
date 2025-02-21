@@ -52,7 +52,7 @@ def process_matches(
         precursor_mz_tol,
         min_matched_signals,
         analog,
-        limit_to_best_match_in_file=True,
+        limit_to_best_match_in_file=False,
         add_dataset_titles=False,
     )
     # always export match table even with 0 matches to mark that it was successful
