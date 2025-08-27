@@ -22,7 +22,7 @@ LIB_COLUMNS = [
     "Matching Peaks",
     "CompoundName",
     "Adduct",
-    "Charge",
+    "Charge"
 ]
 
 logging.basicConfig(level=logging.DEBUG)
@@ -52,7 +52,7 @@ def process_matches(
         precursor_mz_tol,
         min_matched_signals,
         analog,
-        limit_to_best_match_in_file=True,
+        limit_to_best_match_in_file=False,
         add_dataset_titles=False,
     )
 
@@ -322,7 +322,7 @@ def query_usi_or_id(
         logger.debug("Query fastMASST id:%s  of %s", usi_or_lib_id, compound_name)
 
         if database is None:
-            database = masst.DataBase.metabolomicspanrepo_index_nightly
+            database = masst.DataBase.metabolomicspanrepo_index_latest
 
         matches = masst.fast_masst(
             usi_or_lib_id,
@@ -416,7 +416,7 @@ def query_spectrum(
     # might raise exception for service
     try:
         if database is None:
-            database = masst.DataBase.metabolomicspanrepo_index_nightly
+            database = masst.DataBase.metabolomicspanrepo_index_latest
 
         matches, filtered_dps = masst.fast_masst_spectrum(
             mzs=mzs,
@@ -551,7 +551,7 @@ if __name__ == "__main__":
         "--database",
         type=str,
         help="fasst database for public data",
-        default="metabolomicspanrepo_index_nightly",
+        default="metabolomicspanrepo_index_latest",
     )
     parser.add_argument(
         "--library", type=str, help="fasst library for reference spectra", default=None
