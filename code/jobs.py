@@ -33,6 +33,9 @@ files = [
     # ("/Users/shipei/Documents/projects/multiplex_synthesis/target_drugs/all/target.tsv",
     #  "/Users/shipei/Documents/projects/multiplex_synthesis/target_drugs/all/masst_0.7_4/target")
 
+    ("/Users/shipei/Documents/projects/multiplex_synthesis/all_lib/data/test.mgf", 
+     "/Users/shipei/Documents/projects/multiplex_synthesis/all_lib/data/masst_results/test")
+
 ]
 
 if __name__ == "__main__":
