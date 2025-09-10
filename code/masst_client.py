@@ -52,7 +52,7 @@ def process_matches(
         precursor_mz_tol,
         min_matched_signals,
         analog,
-        limit_to_best_match_in_file=False,
+        limit_to_best_match_in_file=True,
         add_dataset_titles=False,
     )
 
